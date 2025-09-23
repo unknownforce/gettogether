@@ -8,50 +8,6 @@
 	
 	/* Style text inputs and dropdowns */
 
-	#provincedropdown,
-	#campusdropdown,
-	input[type="text"],
-	input[type="email"],
-	textarea {
-		width: 100%;
-		padding: 4px 12px;
-		border:none !important;
-		border-radius: 100px;
-		font-size: 16px;
-		margin-bottom: 0;
-		background-color: #F2F2F2;
-		transition: border-color 0.3s ease;
-		box-shadow: 0px 1px 2px 0px rgba(16,24,40,0.5);
-		-webkit-box-shadow: 0px 1px 2px 0px rgba(16,24,40,0.5);
-		-moz-box-shadow: 0px 1px 2px 0px rgba(16,24,40,0.5);
-		position: relative;
-		background-image: url('data:image/svg+xml;utf8,<svg fill="gray" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-		background-repeat: no-repeat;
-		background-position: right 10px center;
-		background-size: 20px;
-		appearance: none;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-	}
-	
-	
-	.lp-form-label {
-		margin-bottom: 130px; 
-		padding-bottom:200px;
-	}
-
-	#provincedropdown:focus,
-	#schooldropdown:focus,
-	input:focus,
-	textarea:focus {
-		border-color: #0073e6; /* Highlight color */
-		outline: none;
-	}
-	#provincedropdown.labels,
-	#campusdropdown.labels {
-		padding-bottom:20px;
-	}
-	
 	/* Style the submit button */
 	#lp-pom-button-43 {
 		font-size:18px;
