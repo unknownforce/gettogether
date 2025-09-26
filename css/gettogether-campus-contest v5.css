@@ -1,5 +1,7 @@
 <style>
-
+html {
+	scroll-behavior: smooth;
+}
 /* Header Image with Title */
 .header-title h1 span {
 	text-transform: uppercase !important;
@@ -108,7 +110,7 @@
 	}
 
 
-/* /end page styling */
+/* /end page styling 
 #leaderboard-loader {
 	position: absolute;
 	top: 0;
@@ -122,7 +124,7 @@
 	z-index: 10;
 	font-size: 1.2em;
 	color: #333;
-}
+}*/
 
 /*remove unbounce border */
 #lp-pom-box-51,
@@ -143,15 +145,39 @@
 	flex-direction: column;
 }
 
-#leaderboard-loader {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	min-height: 150px;
-	opacity: 1;
-	transition: opacity 0.6s ease;
+/* === Leaderboard Loader Styles === */
+#leaderboard-container {
+  position: relative; /* ensures child absolute positioning works */
+	height: auto;
+	width: auto;
+	color: #4d4d4d;
+	background-color: #ffffff;
+	border: solid 2px #419B96;
+	font-family: Source Sans Pro, sans-serif;
+	font-size: 18px;
+	line-height: 22px;
+  overflow: visible;
+  min-height: 300px;
 }
+
+#leaderboard-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+  font-size: 1.2em;
+  color: #333;
+}
+
 
 .spinner {
 	width: 40px;
@@ -162,7 +188,59 @@
 	animation: spin 1s linear infinite;
 	margin: 0 auto;
 }
+/* START campus style */
+.dropdown {
+  position: relative;
+  /* Spacing top for each dropdown based on figma */
+  margin-top:21px;
+}
 
+.dropdown::after {
+  content: "˅"; /* Unicode down arrow */
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #8c8c8c;
+  pointer-events: none;
+  z-index: 2;
+}
+/* Unified dropdown styling */
+.dropdown select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 10px 20px 10px 20px;
+  width: 100%;
+  font-size: 21px;
+  border-radius: 12px;
+  border: 1px solid #bebebe; /* choose one color */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: #ffffff;
+  color: #4d4d4d;
+  line-height: 26px;
+  box-sizing: border-box;
+  min-height: 56px;
+}
+/** light greyed out disabled style 
+#campus_select:disabled {
+  background-color: #f5f5f5;
+  color: #999;
+  border-color: #ddd;
+  cursor: not-allowed;
+}
+*/
+
+/* Focus styles */
+#province_select:focus,
+#campus_select:focus,
+input:focus,
+textarea:focus {
+	border-color: #419b9b;
+	outline: none;
+}
 /* campus styling */
 .campus-container {
   background: #fff;
@@ -189,74 +267,21 @@
   font-family: "Source Sans Pro", sans-serif; 
 }
 
-
-#province_select,
 #campus_select,
-.dropdown {
-	min-height: 56px;
-	opacity: 1;
-	visibility: visible;
-	width: 380px;
-	/* or a fixed width like 300px */
-	max-width: 500px;
-	/* optional: prevents it from stretching too wide */
-	padding: 10px;
-	box-sizing: border-box;
-	margin: 20px auto 0;
-	
-}
-
-#province_select,
-#campus_select {
-	display: block !important;
-	visibility: visible !important;
-	opacity: 1 !important;
-	height: auto !important;
-	background-image: url("▾");
-	background-repeat: no-repeat;
-	background-position: center right 20px;
-	background-size:20px;
-}
-
-/*#province_select::after,
-#campus_select::after {
-	font-size: 1em;
-	font-family: "Font Awesome 5 Free" !important;
-	font-weight: 600;
-	content: '\f078';
-	color: #8C8C8C;
-	text-decoration: none !important;
-	display: block;
+#province_select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 	position: relative;
-}*/
-
-
-/* Reset native dropdown styling */
-select {
-	appearance: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	padding-right: 30px;
-	/* space for arrow */
-	font-size: 21px;
-	border-radius: 12px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #bebebe;
-	color: #4d4d4d;
-	width: 100%;
-	z-index: 2;
-	line-height: 26px !important;
-	font-family: "Source sans Pro", sans-serif;
 }
 
-/* Style dropdown options */
-.dropdown option {
+.dropdown option,
+#province_select option,
+#campus_select option {
 	background-color: #ffffff;
 	color: #4d4d4d;
 	padding: 8px;
 }
-
 
 /* Focus styles */
 .dropdown:focus,
@@ -286,17 +311,7 @@ textarea:focus {
 #campus_button:hover {
   background-color: #c4161c;
 }
-/*
-#lp-pom-box-25 {
-  background: linear-gradient(135deg, #fefefe, #f3f3f3);
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  padding: 30px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
-  background-color: yellow;
-}*/
-
+/* END campus style */
 
 /* Error message styling */
 .error-message {
@@ -326,16 +341,6 @@ textarea:focus {
 }
 
 
-#leaderboard-container {
-	height: auto;
-	width: auto;
-	color: #4d4d4d;
-	background-color: #ffffff;
-	border: solid 2px #419B96;
-	font-family: Source Sans Pro, sans-serif;
-	font-size: 18px;
-	line-height: 22px;
-}
 
 #leaderboard-container .row:nth-child(odd) {
 	background-color: #f0f0f0;
@@ -390,15 +395,19 @@ textarea:focus {
 }
 
 .timestamp {
-	border-top: solid 1px #ccc;
-	text-align: right;
-	font-size: 0.9em;
-	color: #cccccc;
-	padding: 10px 10px 10px 10px;
-	padding-right: 12px;
-	font-style: italic;
-	display: none;
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  position: relative;
+  z-index: 1;
+  padding: 10px 12px;
+  font-size: 0.9em;
+  /* changed colour based on Sarah's feedback */
+  color: #4d4d4d;
+  font-style: italic;
+  border-top: 1px solid #ccc;
 }
+
 
 #social {
 	border: 0;
@@ -517,6 +526,11 @@ textarea:focus {
 	.points {
 		text-align: left;	
 	}
+	
+	.header-title {
+		width: 293px !important;
+	}
+	
 
 	.header-title h1 span {
 		text-transform: uppercase !important;
@@ -534,8 +548,26 @@ textarea:focus {
 	.how-to-join-box::last-child {
 		border-bottom: none !important;
 	}
+		
+	/* Buttons on Mobile */
+	#campus_button {
+		width:280px !important;
+		height: 49px !important;
+		line-height: 9px !important;
+	}
 	
+	#lp-pom-button-213,
+	#lp-pom-button-67 {
+		font-size: 20px !important;
+	}
 	
+	.how-to-join-number {
+		font-size: 70px !important;
+	}
+	
+	.how-to-join-number span {
+		font-size: 70px !important;
+	}
 
 }
 

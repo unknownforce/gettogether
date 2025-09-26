@@ -1,51 +1,15 @@
- <style type="text/css">
+  <style type="text/css">
 	/* Morganite font */ 	
 	/* Header Image with Title */
 	.header-title h1 span {
 		text-transform: uppercase !important;
 		font-size: 122px !important;
-	}
-	
-	.downward-arrow span::after {
-		font-size: 0.8em;
-		font-family: "Font Awesome 5 Free";
-		font-weight: 600;
-		content: "\f063";
-		color: white;
-		text-decoration: none !important;
-		margin-left: 10px;
-	}
-	
-	.downward-arrow:hover span::after {
-		color: #db0e14 !important;	
-	}
-	
-	/* Style text inputs and dropdowns */
-	input[type="text"],
-	input[type="email"],
-	input[type="tel"],
-	textarea {
-		width: 100%;
-		padding: 4px 12px;
-		border:1px solid #BEBEBE !important;
-		border-radius: 8px !important;
-		font-size: 16px !important;
-		margin-bottom: 0;
-		background-color: #FFF !important;
-		transition: border-color 0.3s ease;
-		position: relative;	
-		box-shadow: none !important;
-		-webkit-box-shadow: none !important;
-		-moz-box-shadow: none !important;
-	}
-	
+	}	
 	
 	.lp-form-label {
 		margin-bottom: 130px; 
 		padding-bottom:200px;
 	}
-
-
 	
 	/* Style the submit button */
 	#lp-pom-button-43 {
@@ -169,37 +133,14 @@
 	.links-with-farrow.inverse a span::after {
 		color: white !important;
 	}
-	
-	.gradient-blood-otdt {
-		background-image: linear-gradient(to right, #c4161c, #419b9b) !important;
-	}
-	
-	.gradient-blood-plasma {
-		background-image: linear-gradient(to right, #E7131A, #810B0F) !important;
-	}
-	
-	.round-top-corners {
-		border-top-left-radius: 8px !important;
-		border-top-right-radius: 8px !important;
-	}
 
-/* How it works & Gradients */
+/* How it works */
 	.share-photo {
 		background-image: linear-gradient(to right, #E7131A, #810B0F) !important;
 	}
 	
-	
-/* How to join */
-	.how-to-join-box {
-		border-right:1px solid white !important;
-		padding-right: 16px !important;
-	}
-	
-	.how-to-join-box::last-child {
-		border-right:none !important;
-	}
 
-/* Challenge block & Book now block */
+/* 2x2 Block */
 	
 	.gradient-border {  
 		border-radius: calc(0px * var(--scale, 1));
@@ -208,10 +149,9 @@
 		z-index: 12;
 		width: calc(498px * var(--scale, 1));
 		height: calc(298px * var(--scale, 1));
-		position: absolute;	
+		position: absolute;
+		padding: 16px;
 		background: white !important;
-		//padding: 16px;
-		border: none !important;
 	}
 	
 	.gradient-border::before {  
@@ -225,28 +165,85 @@
 		background-image: linear-gradient(to right, #c4161c, #419b9b) !important;
 		border-radius: inherit;
 		z-index: -1;
-		mask: 
-			linear-gradient(#fff 0 0) content-box,
-			linear-gradient(#fff 0 0);
+		mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
 		mask-composite: exclude;
 		-webkit-mask-composite: destination-out;
 	}
 	
-	
-	.challenge-inner {
-		background: #fff;
-		padding: 2rem;
-		text-align: center;
-	}
-	.challenge-inner h3 {
-		font-size: 26px;
-		font-weight: bold;
-		margin-bottom: 10px;
-		line-height: 1;
+	/* Focus styles */
+	#province:focus,
+	input:focus {
+		border-color: #419b9b !important;
+		outline: none !important;
 	}
 	
-	.challenge-inner .button {
+	.drop-down,
+	.single-line-text,
+	.checkbox-group,
+	.email {
+		margin-top:20px !important;
+	}
+	
+	#lp-pom-form-331 .lp-pom-form-field .opt-label {
+		font-size:16px !important;
+		line-height: 24px !important;
+	}
+	
+	.drop-down select,
+	.single-line-text input,
+	.email input {
+		min-height: 56px;
+		opacity: 1;
+		visibility: visible;
+		width: 100% !important;	
+		max-width: 500px;
+		padding: 10px;
+		box-sizing: border-box;	
+		appearance: none !important;
+		-webkit-appearance: none !important;
+		-moz-appearance: none !important;
+		padding: 10px 20px 10px 20px !important;
+		width: 100%;
+		font-size: 21px !important;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+		font-family: "Source Sans Pro", sans-serif !important;
+		background-color: #ffffff !important;
+		color: #4d4d4d !important;
+		line-height: 26px !important;
+	}
+	
+	.drop-down::after {
+	  content: "˅"; /* Unicode down arrow */
+	  position: absolute;
+	  right: 16px;
+	  top: 50%;
+	  transform: translateY(-50%);
+	  font-size: 18px;
+	  color: #8c8c8c;
+	  pointer-events: none;
+	  z-index: 2;
+	}
 		
+	/* Reset native dropdown styling */
+	select,
+	input[type="tel"],
+	input[type="email"],
+	input[type="text"] {
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		padding: 10px 20px 10px 20px;
+		width: 100%;
+		font-size: 21px;
+		border-radius: 12px !important;
+		border: 1px solid #bebebe; /* choose one color */
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+		font-family: "Source Sans Pro", sans-serif;
+		background-color: #ffffff;
+		color: #4d4d4d;
+		line-height: 26px;
+		box-sizing: border-box;
+		min-height: 56px;
 	}
 	
 	@media only screen and (max-width: 600px) {
@@ -255,7 +252,7 @@
 		}
 		.header-title h1 span {
 			text-transform: uppercase !important;
-			font-size: 84px !important;
+			font-size: 90px !important;
 			line-height: 70px !important;
 		}
 		
@@ -273,17 +270,18 @@
 		.share-photo-text span {
 			line-height: normal !important;
 		}
-		
-		.how-to-join-box {
-			border-right:none !important;
-			padding-right:0 !important;
-			border-bottom: 1px solid white !important;
-			padding-bottom: 0 !important;
+		/* Buttons on Mobile */
+		#lp-pom-form-331 {
+			font-size: 20px !important;
 		}
 		
-		.how-to-join-box::last-child {
-			border-bottom:none !important;
+		/* Making so that you can read the skill testing question on mobile */
+		.drop-down select,
+		.single-line-text input,
+		.email input {
+			font-size: 14px !important;
 		}
-
+		
 	}
+
 </style>
