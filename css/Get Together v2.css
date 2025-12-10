@@ -127,6 +127,19 @@
 		color: white !important;
 		
 	}
+	
+	.footer-link a,
+	.footer-telephone a {
+		text-decoration: none !important;
+	}
+	
+	.footer-link a:hover span span {
+		color: #8e1319 !important;
+	}
+	
+	.footer-telephone a:hover span span {
+		text-decoration: underline !important;
+	}
 
 /* How it works */
 	.how-it-works {
@@ -165,7 +178,7 @@
 	}
 	
 	.how-it-works-arrow::after {
-		font-size: 4em;
+		font-size: 3em;
 			font-family: "Font Awesome 5 Free";
 			font-weight: 700;
 			content: "\f061";

@@ -67,6 +67,20 @@ html {
 	border-top-right-radius: 8px !important;
 }
 
+
+.footer-link a,
+.footer-telephone a {
+	text-decoration: none !important;
+}
+
+.footer-link a:hover span span {
+	color: #8e1319 !important;
+}
+
+.footer-telephone a:hover span span {
+	text-decoration: underline !important;
+}
+
 /* page styling */
 /*.gradient-border {
 		position: relative;
@@ -102,7 +116,7 @@ html {
 /* How to join */
 	.how-to-join-box {
 		border-right:1px solid white !important;
-		padding-right: 16px !important;
+		padding-right:24px !important;
 	}
 	
 	.how-to-join-box::last-child {
@@ -290,6 +304,15 @@ textarea:focus {
 	border-color: #419b9b;
 	outline: none;
 }
+
+#campus_button:disabled {
+	background-color: #bebebe;
+}
+
+#campus_button:hover:disabled {
+	background-color: #bebebe;
+}
+
 #campus_button {
   position: relative !important;
   margin: 30px auto 0 !important;
@@ -486,6 +509,28 @@ textarea:focus {
 .dots div:nth-child(3) {
 	animation-delay: 0.4s;
 }
+
+#lp-pom-text-377 a,
+#lp-pom-text-326 a {
+	text-decoration: none !important;
+}
+
+#lp-pom-text-377 a span {
+	color: #e7131a !important;
+}
+
+#lp-pom-text-377 a:hover span {
+	color: #c4161c !important;
+}
+
+#lp-pom-text-326 a span {
+	color:white !important;
+}
+
+#lp-pom-text-377 a:hover span {
+	text-decoration: none !important;
+}
+
 
 @keyframes bounce {
 

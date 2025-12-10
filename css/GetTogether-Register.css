@@ -133,6 +133,19 @@
 	.links-with-farrow.inverse a span::after {
 		color: white !important;
 	}
+	
+	.footer-link a,
+	.footer-telephone a {
+		text-decoration: none !important;
+	}
+	
+	.footer-link a:hover span span {
+		color: #8e1319 !important;
+	}
+	
+	.footer-telephone a:hover span span {
+		text-decoration: underline !important;
+	}
 
 /* How it works */
 	.share-photo {
@@ -245,6 +258,8 @@
 		box-sizing: border-box;
 		min-height: 56px;
 	}
+	
+	
 	
 	@media only screen and (max-width: 600px) {
 		.lp-positioned-content .challenge-block {

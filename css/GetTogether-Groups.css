@@ -196,7 +196,7 @@
 /* How to join */
 	.how-to-join-box {
 		border-right:1px solid white !important;
-		padding-right: 16px !important;
+		padding-right:24px !important;
 	}
 	
 	.how-to-join-box::last-child {
@@ -249,9 +249,27 @@
 		line-height: 1;
 	}
 	
-	.challenge-inner .button {
-		
+	#lp-pom-text-319 a {
+		text-decoration: none !important;
 	}
+	
+	#lp-pom-text-319 a:hover span span {
+		text-decoration: underline !important;
+	}
+	
+	.footer-link a,
+	.footer-telephone a {
+		text-decoration: none !important;
+	}
+	
+	.footer-link a:hover span span {
+		color: #8e1319 !important;
+	}
+	
+	.footer-telephone a:hover span span {
+		text-decoration: underline !important;
+	}
+
 	
 	@media only screen and (max-width: 600px) {
 		.lp-positioned-content .challenge-block {
